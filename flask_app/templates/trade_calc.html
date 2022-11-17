@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynasty Trade Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{  url_for('static', filename='css/style.css')}}" async></script>
+</head>
+
+<body>
+    <nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded "
+        style="background: linear-gradient(90deg,  #000000 0%, #6366f1 100%)">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <img src="../static/img/tc_transp.png" alt="">
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button" id="menu"
+                class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-1/2" id="navbar-default">
+                <ul
+                    class="flex flex-col justify-around items-center p-4 mt-4 rounded-lg border
+                    border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="/"
+                            class="block text-center px-2 py-2 pr-4 pl-3 text-white rounded hover:shadow-xl hover:bg-indigo-100 md:border-0 md:hover:text-blue-700  dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                    </li>
+                    <li>
+                        <a href="/import"
+                            class="block text-center px-2 py-2 pr-4 pl-3 text-white rounded hover:shadow-xl hover:bg-indigo-100 md:border-0 md:hover:text-blue-700  dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page"> Import Your League</a>
+                    </li>
+                    <li>
+                        <a href="https://sleeper.com/"
+                            class="block text-center px-2 py-2 pr-4 pl-3 text-white rounded hover:shadow-xl hover:bg-indigo-100 md:border-0 md:hover:text-blue-700  dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                            aria-current="page">Sleeper App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex flex-col justify-center">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-8 bg-slate-300 w-full py-5">
+            Trade Calculator
+        </h2>
+        <div class="text-center">
+            <label for="variance" class="font-bold text-xl">Variance:</label>
+            <input type="number" name="variance" id="variance" min="0" max="100" value="5"
+                class="text-right "><span>%</span>
+        </div>
+        <p id="winner" class="w-full text-center text-3xl font-bold my-2"></p>
+    </div>
+
+
+
+
+
+
+    <div class="flex justify-around items-start ">
+        <div class="flex flex-col items-center justify-start border-3 border-b-0 w-1/3 bg-white rounded">
+            <div class='border-b-2 w-full bg-slate-300 rounded'>
+                <p class="text-center mt-2 align-middle py-2 text-2xl font-bold">Team A</p>
+                <p id="A_total" class="text-center w-full mb-2 text-slate-400 font-bold"></p>
+            </div>
+            <div class="team w-full" id="team_a">
+                <p class="flex justify-around focus:pointer-events-auto py-2 items-center border-b-2 hover:bg-indigo-300 hover:text-white hover:cursor-pointer
+                hover:shadow-lg hover:shadow-indigo-500 hover:border-none w-full text-sm text-slate-400 rounded"
+                    id="A">
+                    <span>Insert</span> <span>Player(s)</span> <span>Here</span>
+                </p>
+            </div>
+        </div>
+
+
+        <div
+            class="flex flex-col items-center justify-start border-3 border-b-0 border-collapse w-1/3 bg-white rounded">
+            <div class='border-b-2 w-full bg-slate-300 rounded'>
+                <p class="text-center mt-2 align-middle py-2 text-2xl font-bold">Team B</p>
+                <p id="B_total" class="text-center w-full mb-2 text-slate-400 font-bold"></p>
+            </div>
+            <div class="team w-full" id="team_b">
+                <p class="flex justify-around focus:pointer-events-auto py-2 items-center border-b-2 hover:bg-indigo-300 hover:text-white hover:cursor-pointer
+            hover:shadow-lg hover:shadow-indigo-500 hover:border-none text-sm text-slate-400 rounded" id="B">
+                    <span>Insert</span> <span>Player(s)</span> <span>Here</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <p class="w-1/3 mx-auto text-center font-bold text-2xl my-5">All Players</p>
+    <p class="text-sm text-slate-400 w-1/3 mx-auto text-center mb-5">Click and Drag to Desired Team</p>
+
+    <div class="hidden lg:flex justify-around items-center flex-wrap wrap [&>*]:w-1/4">
+
+        <div>
+            <div class="flex justify-center ">
+                <label for="search_qb" class="font-bold text-xl">Search QB: </label>
+                <input class=" border-2 border-indigo-200 ml-2 mb-5" type="text" name="" id="search_qb">
+            </div>
+            <div class="flex flex-col justify-start overflow-auto text-center h-80 border-3 rounded mx-auto team bg-white"
+                id="qb_display">
+                {% for qb in QBs %}
+                <p draggable="true" id="{{qb.id}}" value={{qb.value}} name="{{qb.full_name}}" class="flex justify-around player draggable focus:pointer-events-auto py-2 border-b-2 items-center hover:bg-indigo-300 hover:text-white hover:cursor-pointer
+            hover:shadow-lg hover:shadow-indigo-500 hover:border-none rounded QB"><span
+                        class="rounded-full px-2 py-1 font-bold {% if qb.position == " RB" %} text-teal-500 {% endif %}
+                        {% if qb.position=="QB" %} text-red-500 {% endif %} {% if qb.position=="WR" %} text-green-500 {%
+                        endif %} {% if qb.position=="TE" %} text-indigo-500 {% endif %} ">{{qb.position}}</span> <span>{{qb.full_name}}</span> <span>{{qb.value}}</span>
+                </p>
+            {%endfor %}
+            </div>
+        </div>
+
+
+        <div> 
+            <div class=" flex justify-center ">
+                <label for=" search_rb" class="font-bold text-lg">Search RB: </label>
+                        <input class=" border-2 border-indigo-200 ml-2 mb-5" type="text" name="" id="search_rb">
+            </div>
+
+            <div class=" flex flex-col justify-start overflow-auto text-center h-80 border-3 rounded mx-auto team
+                        bg-white" id="rb_display">
+                {% for rb in RBs %}
+                <p draggable="true" id="{{rb.id}}" value={{rb.value}} name="{{rb.full_name}}" class="flex justify-around player draggable focus:pointer-events-auto py-2 border-b-2 items-center hover:bg-indigo-300 hover:text-white hover:cursor-pointer
+                hover:shadow-lg hover:shadow-indigo-500 hover:border-none rounded RB"><span
+                        class="rounded-full px-2 py-1 font-bold {% if rb.position == " RB" %} text-teal-500 {% endif %}
+                        {% if rb.position=="QB" %} text-red-500 {% endif %} {% if rb.position=="WR" %} text-green-500 {%
+                        endif %} {% if rb.position=="TE" %} text-indigo-500 {% endif %} ">{{rb.position}}</span> <span>{{rb.full_name}}</span> <span>{{rb.value}}</span>
+                </p>
+                            {%endfor %}
+            </div>
+        </div>  
+
+        <div>
+            <div class=" flex justify-center ">
+                <label for=" search_wr" class="font-bold text-lg">Search WR: </label>
+                        <input class=" border-2 border-indigo-200 ml-2 mb-5" type="text" name="search_wr"
+                            id="search_wr">
+            </div>
+
+            <div class=" flex flex-col justify-start overflow-auto text-center h-80 border-3 rounded mx-auto team bg-white"
+                id="wr_display">
+                {% for wr in WRs %}
+                <p draggable="true" id="{{wr.id}}" value={{wr.value}} name="{{wr.full_name}}" class="flex justify-around player draggable focus:pointer-events-auto py-2 border-b-2 items-center hover:bg-indigo-300 hover:text-white hover:cursor-pointer
+                hover:shadow-lg hover:shadow-indigo-500 hover:border-none rounded WR"><span
+                        class="rounded-full px-2 py-1 font-bold {% if wr.position == " RB" %} text-teal-500 {% endif %}
+                        {% if wr.position=="QB" %} text-red-500 {% endif %} {% if wr.position=="WR" %} text-green-500 {%
+                        endif %} {% if wr.position=="TE" %} text-indigo-500 {% endif %} ">{{wr.position}}</span> <span>{{wr.full_name}}</span> <span>{{wr.value}}</span>
+                </p>
+                {%endfor %}
+            </div>
+        </div>
+
+        <div>
+            <div class=" flex justify-center ">
+                <label for=" search_te" class="font-bold text-lg">Search TE: </label>
+                        <input class=" border-2 border-indigo-200 ml-2 mb-5" type="text" name="" id="search_te">
+            </div>
+
+            <div class=" flex flex-col justify-start overflow-auto text-center h-80 border-3 rounded mx-auto team bg-white"
+                id="te_display">
+                {% for te in TEs %}
+                <p draggable="true" id="{{te.id}}" value={{te.value}} name="{{te.full_name}}" class="flex justify-around player draggable focus:pointer-events-auto py-2 border-b-2 items-center hover:bg-indigo-300 hover:text-white hover:cursor-pointer
+                hover:shadow-lg hover:shadow-indigo-500 hover:border-none rounded TE"><span
+                        class="rounded-full px-2 py-1 font-bold {% if te.position == " RB" %} text-teal-500 {% endif %}
+                        {% if te.position=="QB" %} text-red-500 {% endif %} {% if te.position=="WR" %} text-green-500 {%
+                        endif %} {% if te.position=="TE" %} text-indigo-500 {% endif %} ">{{te.position}}</span> <span>{{te.full_name}}</span> <span>{{te.value}}</span>
+                </p>
+                {%endfor %}
+            </div>
+        </div>
+
+    </div>
+    <div class="w-1/2 flex flex-col justify-center mx-auto lg:hidden">
+            <div class="flex justify-center">
+                        <label for="search_all" class="font-bold text-md md:text-xl">Search All Players: </label>
+                        <input class=" border-2 border-indigo-200 ml-2 mb-5" type="text" name="" id="search_all">
+            </div>
+            <div class="flex flex-col w-full justify-start overflow-auto text-center h-80 border-3 rounded mx-auto team bg-white"
+                id="all_display">
+                {% for player in all_players %}
+                <p draggable="true" id="{{player.id}}" value={{player.value}} name="{{player.full_name}}" class="flex justify-around player draggable focus:pointer-events-auto py-2 border-b-2 items-center hover:bg-indigo-300 hover:text-white hover:cursor-pointer
+    hover:shadow-lg hover:shadow-indigo-500 hover:border-none rounded"><span
+                        class="rounded-full px-2 py-1 font-bold {% if player.position == " RB" %} text-teal-500 {% endif
+                        %} {% if player.position=="QB" %} text-red-500 {% endif %} {% if player.position=="WR" %}
+                        text-green-500 {% endif %} {% if player.position=="TE" %} text-indigo-500 {% endif %} ">{{player.position}}</span> <span>{{player.full_name}}</span> <span>{{player.value}}</span>
+        </p>
+    {%endfor %}
+    </div>
+    
+
+
+
+
+    <script src=" {{ url_for('static', filename='js/site.js' )}}"></script>
+</body>
+
+</html>

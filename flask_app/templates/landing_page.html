@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Trade Champs</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@next/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-gray-700 bg-white" style="font-family: 'Source Sans Pro', sans-serif">
+    <div class="py-20 flex justify-around items center" style="background: linear-gradient(90deg, #6366f1 0%, #000000 100%)">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-2 text-white">
+                Trade Like a Champion Today
+            </h2>
+            <h3 class="text-2xl mb-8 text-gray-200">
+                Calculate Your Players Values and See How You Can Improve!
+            </h3>
+        </div>
+        <div class="rounded px-3 py-5 w-1/2 mr-5">
+            <img src="../static/img/tc_transp.png" alt="">
+        </div>
+    </div>
+    <!-- Features -->
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8 bg-slate-300 w-full py-5" >
+        Features
+    </h2>
+    <section class="container mx-auto px-6 p-10">
+        <div class="flex items-center flex-wrap mb-20">
+            <div class="w-full md:w-1/2 md:flex-none flex flex-col items-center md:items-start">
+                <h4 class="text-3xl text-gray-800 font-bold mb-3">
+                    Import Your Sleeper League
+                </h4>
+                <p class="text-gray-600 mb-8">
+                    Import Your Sleeper League, Compare Rosters. See Each Team Needs and Strengths
+                </p>
+                <a href="/import" class=""><button class=" bg-slate-200 font-bold rounded-full py-4 px-8 shadow-xl uppercase tracking-wider hover:shadow-indigo-500 hover:scale-90">
+                Import Your League
+                </button></a> 
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center sm:justify-self-end">
+                <img src="../static/img/sleeper-removebg.png"  class = "my-3"alt="sleeper_img" />
+            </div>
+        </div>
+        <div class="flex items-center flex-wrap mb-20 bg-slate-200">
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+                <img src="../static/img/trade_ex.png" alt="trade_ex" />
+            </div>
+            <div class="w-full md:w-1/2 pl-10">
+                <h4 class="text-3xl text-gray-800 font-bold mb-3">
+                    Trade Calculator
+                </h4>
+                <p class="text-gray-600 mb-8">
+                    Drag and Drop a player to a desired team. Compare Values before finalizing your championship move!
+                </p>
+                <a href="/calculator"><button class="bg-white  font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:shadow-indigo-500 hover:scale-90">
+                Calculator
+                </button></a>
+            </div>
+        </div>
+        <div class="flex items-center flex-wrap mb-20">
+            <div class="w-full md:w-1/2">
+                <h4 class="text-3xl text-gray-800 font-bold mb-3">
+                    Coming Soon...
+                </h4>
+                <p class="text-gray-600 mb-8">
+                <ul class="text-xl">
+                    <li>Live Tweets</li>
+                    <li>Trending Players</li>
+                    <li>Scoring System Value Changes</li>
+                </ul>
+                </p>
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+                <img src="../static/img/twitter-rise.gif" alt="twitter_gif" />
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

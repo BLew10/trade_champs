@@ -1,0 +1,18 @@
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+.hide {
+    display:none;
+}
+
+.dragging {
+    opacity: .5;
+}
+
+.a-team {
+    opacity: 1;
+}
+.b-team {
+    opacity: 1;
+}
